@@ -27,7 +27,7 @@
 			}
 			h1{
 				font-size: 8em;
-				margin-top: 14%;
+				margin-top: 15%;
 			}
 			.text-info h3{
 				font-size: 3em;
@@ -44,6 +44,8 @@
 		<div class="container-fluid">
 			<div class="col-sm-12 text-center">
 				<h1>{{currentValue | currency : 'R$ '}}</h1>
+				<br/>
+				<h2>Valor que o brasileiro pagou de tributos de 01/01/2016 até {{finish | date:'dd/MM/yyyy'}}.</h2>
 			</div>
 		</div>
 		<footer class="footer">
@@ -73,6 +75,7 @@
 
 				$scope.currentValue = 0;
 				$scope.intervalValue = 0;
+				$scope.finish = new Date();
 
 				$scope.getInformations = function(){
 					$http.get(url).success(function(data){
